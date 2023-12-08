@@ -9,9 +9,11 @@
   </head>
   <body>
 
-    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-      Name: <input type="text" name="fname">
-      <input type="submit" value="Submit">
+    <form name="passLength" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      Length of Password (must be between 8 - 128 characters):
+      <input type="number" value="" id="passLength" min="8" max="128"> </input>
+      <button type="button" onclick="getPasswordOptions()">Submit</button>
+      <small></small>
       </form>
 
     <div class="wrapper">
@@ -40,7 +42,11 @@
 
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"> </script>
+
+
+
+    
 
   </body>
 </html>

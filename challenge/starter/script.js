@@ -89,12 +89,26 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+// Prompting user to select their options for the password
+// 1) Prompt user - using prompt
+
 function getPasswordOptions() {
-  var passOptionPrompt = prompt('Please select your option');
-  console.log('Hello');
+  var passOptionLength = document.querySelector("form");
+  if (passOptionLength = i <8 || i > 128) {
+    text = "Input Ok";
+  } else {
+    text = "Input invalid";
+  }
+
+  // when user inputs - program needs to know what it is 
+
 }
-getPasswordOptions();
+
+getPasswordOptions(charactersNum);
 // Prompts user to input anything.
+// 2) Once user selects their options - if statements
+
+if (passOptionLength )
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -122,8 +136,8 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
+  let x = document.form["passLength"].value;
+  if (x !== number <8 || x > 128) {
     alert("Name must be filled out");
     return false;
   }
