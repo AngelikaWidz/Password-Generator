@@ -107,6 +107,12 @@ console.log("User entered password:", userPassword);
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+// variables which select one random variable from an array:
+var randomSpecial = specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
+var randomNumeric = numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
+var randomLower = lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)];
+var randomUpper = upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
+
 }
 
 // Function to generate password with user input
@@ -126,4 +132,9 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+var button = document.getElementById('generate').addEventListener('click', buttonClick);
+function buttonClick() {
+  alert('password');
+}
+
+// generateBtn.addEventListener('click', writePassword);
