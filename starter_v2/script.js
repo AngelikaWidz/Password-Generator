@@ -88,31 +88,43 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-
-function getPasswordOptions() {
-var password = prompt("Enter your ");
-if (password.length <= 8 && password.length >= 128 ) {
-    alert("Password Length Invalid");
-    return getPasswordWithStrengthCheck();
-} else {
-    return password;
-}
-}
-
-var userPassword = getPasswordOptions();
-console.log("User entered password:", userPassword);
-
-
-// Function for getting a random element from an array
-function getRandom(arr) {
+// text box
+var passwordText = document.getElementById('password');
+var length = 9;
 
 // variables which select one random variable from an array:
 var randomSpecial = specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
 var randomNumeric = numericCharacters[Math.floor(Math.random()*numericCharacters.length)];
 var randomLower = lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)];
 var randomUpper = upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
+var allChars = upperCasedCharacters + lowerCasedCharacters +numericCharacters + specialCharacters;
 
+// Function to prompt user for password options
+
+var desiredLength = prompt('Enter Your Password Length:');
+desiredLength = parseInt(desiredLength);
+
+// form validation
+if(isNaN(desiredLength) && desiredLength <=8 && desiredLength >= 128) {
+  alert('invalid');
+} else {
+  var generateString = generateRandomString(desiredLength);
+  console.log('Generated', generateString);
+}
+
+
+// function which generastes password
+function generateRandom() {
+  var password = "";
+  password += randomLower;
+  password += randomNumeric;
+  password += randomSpecial;
+  password += randomUpper;
+
+  while(length > password.length) {
+    password += allChars[Math.floor(Math.random()*allChars.length)];
+  }
+  passwordText.value = password;
 }
 
 // Function to generate password with user input
@@ -121,20 +133,23 @@ function generatePassword() {
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+// var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
-}
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector('#password');
+
+//   passwordText.value = password;
+// }
 
 // Add event listener to generate button
-var button = document.getElementById('generate').addEventListener('click', buttonClick);
-function buttonClick() {
-  alert('password');
-}
+
+// var button = document.getElementById('generate').addEventListener('click', buttonClick);
+// function buttonClick() {
+//   console.log('button pressed');
+//   alert('password');
+// }
 
 // generateBtn.addEventListener('click', writePassword);
