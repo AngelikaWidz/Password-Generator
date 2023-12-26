@@ -99,20 +99,6 @@ var randomLower = lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharac
 var randomUpper = upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)];
 var allChars = upperCasedCharacters + lowerCasedCharacters +numericCharacters + specialCharacters;
 
-// Function to prompt user for password options
-
-var desiredLength = prompt('Enter Your Password Length:');
-desiredLength = parseInt(desiredLength);
-
-// form validation
-if(isNaN(desiredLength) && desiredLength <=8 && desiredLength >= 128) {
-  alert('invalid');
-} else {
-  var generateString = generateRandomString(desiredLength);
-  console.log('Generated', generateString);
-}
-
-
 // function which generastes password
 function generateRandom() {
   var password = "";
