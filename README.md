@@ -1,3 +1,5 @@
 <h2> Password Generator Challenge </h2>  
 
-This challenge focuses on the deeper side of JavaScript, attempting to incorporate more interactive and complex elements into my code - I plan to revise my projects once I get some more time/experience since I'm constantly being exposed to new advice/information.
+This challenge explores cobinign functions in JavaScript, using defined variables and linking HTML elements to display the generated password in the text box - including checkboxes and form validation.
+Considering the project is constantly in progress, it allows me to keep revisiting and comparing my own progress whilst I learn more and become more comforable/fluent in working with JavaScript.
+
